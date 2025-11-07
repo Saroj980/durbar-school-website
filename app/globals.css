@@ -1,5 +1,11 @@
-@import "tailwindcss";
+/* app/globals.css — Minimal, Tailwind v4 friendly */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  @apply bg-neutralLight text-neutralDark font-body;
-}
+
+/* small sensible resets */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; padding: 0; }
+
+/* Optional: local small tweaks, avoid using @apply with custom theme names here */
