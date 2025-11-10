@@ -2,8 +2,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+type ProgramColor = "accentGreen" | "secondary" | "accentRed";
+
 export default function ProgramsSection() {
-  const colorMap = {
+  const colorMap: Record<ProgramColor, string> = {
     accentGreen: "text-accentGreen",
     secondary: "text-secondary",
     accentRed: "text-accentRed",
