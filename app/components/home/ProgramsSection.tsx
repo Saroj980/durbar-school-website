@@ -2,36 +2,48 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+// Step 1️⃣ Define valid color keys
 type ProgramColor = "accentGreen" | "secondary" | "accentRed";
 
+// Step 2️⃣ Create colorMap based on that type
+const colorMap: Record<ProgramColor, string> = {
+  accentGreen: "text-accentGreen",
+  secondary: "text-secondary",
+  accentRed: "text-accentRed",
+};
+
+// Step 3️⃣ Define program type that *uses* ProgramColor
+interface Program {
+  title: string;
+  desc: string;
+  color: ProgramColor;
+  img: string;
+}
+
+// Step 4️⃣ Build your programs array with explicit types
+const programs: Program[] = [
+  {
+    title: "Kindergarten",
+    desc: "Play-based learning for curiosity and creativity.",
+    color: "accentGreen",
+    img: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    title: "Primary School",
+    desc: "Building strong foundations through creative education.",
+    color: "secondary",
+    img: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    title: "Secondary School",
+    desc: "Empowering students with critical thinking and leadership.",
+    color: "accentRed",
+    img: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80",
+  },
+];
+
+// Step 5️⃣ When rendering:
 export default function ProgramsSection() {
-  const colorMap: Record<ProgramColor, string> = {
-    accentGreen: "text-accentGreen",
-    secondary: "text-secondary",
-    accentRed: "text-accentRed",
-  };
-
-  const programs = [
-    {
-      title: "Kindergarten",
-      desc: "Play-based learning for curiosity and creativity.",
-      color: "accentGreen",
-      img: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-      title: "Primary School",
-      desc: "Building strong foundations through creative education.",
-      color: "secondary",
-      img: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-      title: "Secondary School",
-      desc: "Empowering students with critical thinking and leadership.",
-      color: "accentRed",
-      img: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80",
-    },
-  ];
-
   return (
     <section className="bg-white py-24">
       <div className="max-w-6xl mx-auto px-6">
