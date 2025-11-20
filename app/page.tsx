@@ -5,6 +5,7 @@ import MissionSection from "@/app/components/home/MissionSection";
 import AboutSection from "@/app/components/home/AboutSection";
 import ProgramsSection from "@/app/components/home/ProgramsSection";
 import GallerySection from "@/app/components/home/GallerySection";
+import PrincipalMessageSection from "@/app/components/home/PrincipalMessage";
 import TestimonialSection from "@/app/components/home/TestimonialSection";
 import CTASection from "@/app/components/home/CTASection";
 import FooterSection from "@/app/components//Footer";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <HeroSection />
       <MissionSection />
       <AboutSection />
+      <PrincipalMessageSection/>
       <ProgramsSection />
       <GallerySection />
       <TestimonialSection />
